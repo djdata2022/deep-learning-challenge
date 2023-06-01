@@ -1,8 +1,44 @@
 # deep-learning-challenge
 Module 21 - Machine Learning and Neural Networks - May 2023
 
+# Report on the Neural Network Model
 
-## Background
+## Overview of the analysis
+The goal of the analysis is to develop a tool that will help the nonprofit foundation Alphabet Soup to select the applicants for funding with the best chance of success in their ventures. Using the features in their dataset of more than 34,000 organizations that have received funding from Alphabet Soup over the years, I created a binary classifier to predict whether applicants will be successful if funded by Alphabet Soup.
+
+## Results 
+
+### Data Preprocessing
+
+The target variable of the model is "Is_Successful" as that is what we want to predict.
+
+The features of the model are the remaining columns that were not dropped: APPLICATION_TYPE,	AFFILIATION,	CLASSIFICATION,	USE_CASE, ORGANIZATION,	STATUS,	INCOME_AMT,	SPECIAL_CONSIDERATIONS and ASK_AMT.
+
+The identification variables EIN and NAME were removed from the input data because they are neither targets nor features. 
+
+### Compiling, Training, and Evaluating the Model
+
+Initially, I tried using 2 hidden layers with 80 and 30 neurons and using the sigmoid and renu activation functions. The output layer used the tanh activation function. After 100 epachs, the training accuracy went up to 0.7395 and the test accuracy was 0.7324. However, the target model performance was 0.75.
+
+To increase model performance, I tried removing additional columns which seemed to be of minor significance - STATUS and SPECIAL_CONSIDERATIONS. I also tried additional binning and increasing the number of layers, neurons epochs as well as changing the activation functions. The optimized model had a training accuracy of 0.7388 and test accuracy of 0.7331. 
+
+### Summary
+In summary, through multiple iterations, a model was created that did not achieve the desired accuracy of 0.75 but got to 0.733. An SVM binary classification model may also be used to solve this problem as we are dealing with two options for the target - is successful and is not successful.
+
+![App](images/Screen%20Shot%202023-05-29%20at%207.36.32%20PM.png)
+![App](images/Screen%20Shot%202023-05-29%20at%207.38.00%20PM.png)
+
+
+
+
+
+
+
+
+
+
+
+# Assignment Details
 The nonprofit foundation Alphabet Soup wants a tool that can help it select the applicants for funding with the best chance of success in their ventures. With your knowledge of machine learning and neural networks, you’ll use the features in the provided dataset to create a binary classifier that can predict whether applicants will be successful if funded by Alphabet Soup.
 
 From Alphabet Soup’s business team, you have received a CSV containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization, such as:
